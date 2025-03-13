@@ -38,8 +38,8 @@ const EditCustomer = () => {
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
         <div className="overflow-x-auto py-10">
-            <h1>{customer.getcustomer.name}</h1>
-            <UserForm onSubmit={handleSubmit} initialValue={customer.getcustomer} />
+            <h1>{customer.getcustomer.customer.name}</h1>
+            <UserForm onSubmit={handleSubmit} initialValue={customer.getcustomer.customer} />
         </div>
     </div>
   )

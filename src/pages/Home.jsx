@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="w-screen py-20 flex justify-center flex-col items-center">
         <div className="flex items-center justify-between gap-1 mb-5 pl-10 pr-10">
-            <h1 className="text-4xl font-bold">Reactjs 18 Python Django CRUD (Create, Read, Update and Delete) with Pagination | Tanstack Query Tailwind CSS</h1>
+            <h1 className="text-4xl font-bold">Reactjs 18 Python Flask CRUD (Create, Read, Update and Delete) with Pagination | Tanstack Query Tailwind CSS</h1>
         </div> 
         <div className="overflow-x-auto pt-10">
             <div className="mb-2 w-full text-right">

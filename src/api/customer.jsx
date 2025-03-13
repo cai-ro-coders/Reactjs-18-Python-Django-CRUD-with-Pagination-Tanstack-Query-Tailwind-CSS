@@ -1,26 +1,26 @@
 export async function getCustomerList(page) {
-  const response = await fetch(`http://localhost:8000/api/customers/?page=${page}`);
-  //const response = await fetch("http://localhost:8000/api/customers/");
+  const response = await fetch(`http://127.0.0.1:5000/api/customerpagination/${page}/3`);
+  //const response = await fetch("http://127.0.0.1:5000/api/customer/");
   const data = await response.json();
   //console.log(data);
   return {
-    customerlist: data.results,  //customerlist: data,
-    totalpage: data.count,
-    perpage: 3
+    customerlist: data.customers,
+    totalpage: data.total, 
+    perpage: data.per_page
   }
 }
 
 export async function fetchCustomer(id) {
-  const response = await fetch(`http://localhost:8000/api/customers/${id}/`);
+  const response = await fetch("http://127.0.0.1:5000/api/customer/"+id);
   const data = await response.json();
-  //console.log(data);
+  console.log(data);
   return {
     getcustomer: data
   }
 }
 
 export async function createCustomer(newCustomer) {
-  const response = await fetch("http://localhost:8000/api/customers/", {
+  const response = await fetch("http://127.0.0.1:5000/api/customer", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json"
@@ -32,7 +32,7 @@ export async function createCustomer(newCustomer) {
 }
 
 export async function updateCustomer(updatedCustomer) {
-  const response = await fetch(`http://localhost:8000/api/customers/${updatedCustomer.id}/`, {
+  const response = await fetch(`http://127.0.0.1:5000/api/customer/${updatedCustomer.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -44,7 +44,7 @@ export async function updateCustomer(updatedCustomer) {
 }
 
 export async function deleteCustomer(id) {
-  const response = await fetch(`http://localhost:8000/api/customers/${id}/`, {
+  const response = await fetch(`http://127.0.0.1:5000/api/customer/${id}`, {
     method: "DELETE",
   });
   return response.json()
